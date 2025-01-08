@@ -3,45 +3,38 @@
  * на сервер.
  * */
 const createRequest = (options = {}) => {
-
     const xhr = new XMLHttpRequest;
     xhr.responseType = 'json';
+    let {url, data, method, callback} = options;
 
-    const formData = new FormData;
-
-    let method = options.method;
-    let url = options.url;
-    let data = options.data;
+    let formData = new FormData();
 
     if (method === 'GET') {
-        url = url + '?' + 'mail=' + data.email + '&' + 'password=' + data.password;
+        url = url + '?';
 
-    } else {
-        formData.append('mail', data.email);
-        formData.append('password', data.password);
+        for (let key in data) {
+            url += key + '=' + data[key] + '&';
+        }
+        url = url.slice(0, -1);
 
-        /*
+    } else { 
         for (let key in data) {
             formData.append(key, data[key]);
-        }
-        */
+        };        
     }
+
+    xhr.open(method, url);
+    xhr.send(formData);
 
     try {
-        xhr.open(method, url);
-        xhr.send(formData);
-      }
-    catch (e) {
-    // перехват сетевой ошибки
-        options.callback(e);
-    }
+        xhr.addEventListener('readystatechange', function () {
+          if (this.readyState == xhr.DONE && xhr.status === 200) {
+            callback(xhr.response.error, xhr.response);
+          }
+        });
 
-    xhr.onload = function() {
-        //let error = null;
-        if(xhr.status === 200) {
-            options.callback(null, xhr.response);
-        } else {
-            options.callback(xhr.response.error);
-        }
-    }
-};
+      } catch (error) {
+        callback(error);
+      }
+    };
+

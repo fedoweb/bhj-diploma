@@ -5,6 +5,26 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1"
+    },
+    {
+      "password": "1234",
+      "id": "9aazfgkm5mgj0cm"
+    },
+    {
+      "password": "12345",
+      "id": "9aazis0m5mgqzqt"
+    },
+    {
+      "name": "тест",
+      "email": "afedotova@my.com",
+      "password": "12345",
+      "id": "9aaz3b8m5miqqsv"
+    },
+    {
+      "name": "gggggg",
+      "email": "vfedotov81@mail.ru",
+      "password": "12345",
+      "id": "9aazg08m5mk8izf"
     }
   ],
   "accounts": [
@@ -22,6 +42,26 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "тест",
+      "user_id": "9aazg08m5mk8izf",
+      "id": "9aaz8iwm5mofou2"
+    },
+    {
+      "name": "банк",
+      "user_id": "9aazg08m5mk8izf",
+      "id": "9aazc3km5o7usy1"
+    },
+    {
+      "name": "копилка",
+      "user_id": "9aazg08m5mk8izf",
+      "id": "9aazht8m5o7vu9f"
+    },
+    {
+      "name": "тест",
+      "user_id": "9aaz3b8m5miqqsv",
+      "id": "9aaz2y4m5ode8d0"
     }
   ],
   "transactions": [
@@ -159,6 +199,42 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "9aaz52wm5ocbzrv",
+      "type": "income",
+      "name": "зп",
+      "sum": 5000,
+      "account_id": "9aaz8iwm5mofou2",
+      "user_id": "9aazg08m5mk8izf",
+      "created_at": "2025-01-08T20:17:04.986Z"
+    },
+    {
+      "id": "9aazmzgm5occ5s2",
+      "type": "expense",
+      "name": "еда",
+      "sum": 100,
+      "account_id": "9aaz8iwm5mofou2",
+      "user_id": "9aazg08m5mk8izf",
+      "created_at": "2025-01-08T20:17:12.769Z"
+    },
+    {
+      "id": "9aaz948m5odegle",
+      "type": "income",
+      "name": "тест",
+      "sum": 5000,
+      "account_id": "9aaz2y4m5ode8d0",
+      "user_id": "9aaz3b8m5miqqsv",
+      "created_at": "2025-01-08T20:46:59.713Z"
+    },
+    {
+      "id": "9aazkrsm5odffiv",
+      "type": "expense",
+      "name": "тест",
+      "sum": 600,
+      "account_id": "9aaz2y4m5ode8d0",
+      "user_id": "9aaz3b8m5miqqsv",
+      "created_at": "2025-01-08T20:47:44.982Z"
     }
   ]
 }
